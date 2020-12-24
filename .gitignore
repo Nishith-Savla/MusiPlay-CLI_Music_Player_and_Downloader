@@ -1,0 +1,8 @@
+# Auto-generated
+/.idea/
+
+# Virtual-environment
+/.musicplayer-venv/
+
+# Downlaods directory
+/YDL_Downloads/
