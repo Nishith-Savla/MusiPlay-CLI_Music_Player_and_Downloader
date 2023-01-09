@@ -1,3 +1,4 @@
+import os
 import pathlib
 import shutil
 from time import sleep
@@ -25,7 +26,8 @@ def get_partial_audio(url: str, add_suffix=False, timeout=None):
 
 
 def play_audio(filepath: str, timestamp=1):
-    media: pyglet.media.codecs.Source = pyglet.resource.media(pathlib.Path(filepath).as_posix())
+    path = pathlib.Path(filepath)
+    media: pyglet.media.codecs.StreamingSource = pyglet.media.load(path.as_posix())
 
     media.seek(timestamp)
     return media.play()
